@@ -1,21 +1,21 @@
-@load scripts/irc_channelinfo.zeek
-@load scripts/irc_channeltopic.zeek
-@load scripts/irc_error.zeek
-@load scripts/irc_globalusers.zeek
-@load scripts/irc_invalidnick.zeek
-@load scripts/irc_join.zeek
-@load scripts/irc_kick.zeek
-@load scripts/irc_modemsg.zeek
-@load scripts/irc_namesinfo.zeek
-@load scripts/irc_networkinfo.zeek
-@load scripts/irc_nick.zeek
-@load scripts/irc_notice.zeek
-@load scripts/irc_privmsg.zeek
-@load scripts/irc_usermsg.zeek
-@load scripts/irc_who.zeek
-@load scripts/irc_whois.zeek
-@load scripts/irc_whoischannel.zeek
-@load scripts/irc_whomsg.zeek
+@load ./scripts/irc_channelinfo.zeek
+@load ./scripts/irc_channeltopic.zeek
+@load ./scripts/irc_error.zeek
+@load ./scripts/irc_globalusers.zeek
+@load ./scripts/irc_invalidnick.zeek
+@load ./scripts/irc_join.zeek
+@load ./scripts/irc_kick.zeek
+@load ./scripts/irc_modemsg.zeek
+@load ./scripts/irc_namesinfo.zeek
+@load ./scripts/irc_networkinfo.zeek
+@load ./scripts/irc_nick.zeek
+@load ./scripts/irc_notice.zeek
+@load ./scripts/irc_privmsg.zeek
+@load ./scripts/irc_usermsg.zeek
+@load ./scripts/irc_who.zeek
+@load ./scripts/irc_whois.zeek
+@load ./scripts/irc_whoischannel.zeek
+@load ./scripts/irc_whomsg.zeek
 
 
 module Strato;
@@ -59,7 +59,7 @@ event irc_oper_response(c: connection, is_orig: bool, got_oper: bool) {
 
 # Command: INVITE
 # Parameters: <nickname> <channel>
-# 
+#
 # The INVITE command is used to invite a user to a channel.  The
 # parameter <nickname> is the nickname of the person to be invited to
 # the target channel <channel>.  There is no requirement that the
@@ -72,6 +72,6 @@ event irc_invite_message(c: connection, is_orig: bool, prefix: string, nickname:
 }
 
 event irc_whois_operator_line(c: connection, is_orig: bool, nick: string) {
-    print "whois operator line";   
+    print "whois operator line";
 }
 
